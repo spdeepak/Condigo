@@ -1,6 +1,8 @@
 package Condigo
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestWhenThen(t *testing.T) {
 	// Case: When the condition is true, it should return the Then result
@@ -47,5 +49,15 @@ func TestWhenMultipleElseIf(t *testing.T) {
 		Else("Default")
 	if result != "Default" {
 		t.Errorf("Expected 'Default', got %v", result)
+	}
+}
+
+func TestWithFunction(t *testing.T) {
+	res, _ := When(true).
+		Then(func() bool { return true }).
+		Else(func() bool { return false }).(func() bool)
+
+	if true != res() {
+		t.Errorf("Expected 'true', got %v", res())
 	}
 }
