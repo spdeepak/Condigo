@@ -1,4 +1,4 @@
-package Condigo
+package condigo
 
 // Conditional represents the initial condition that is evaluated.
 // If the condition is true, Then logic will execute.

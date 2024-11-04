@@ -1,4 +1,4 @@
-package Condigo
+package condigo
 
 import (
 	"testing"
