@@ -1,14 +1,14 @@
-# Condigo
-Simplify your decision-making logic with Condigo, a lightweight Go library providing a fluent interface for conditional statements. Easily define complex logic flows in a readable, linear fashion.
+# condigo
+Simplify your decision-making logic with condigo, a lightweight Go library providing a fluent interface for conditional statements. Easily define complex logic flows in a readable, linear fashion.
 
-## How to Use Condigo
+## How to Use condigo
 
 ### Scenario 1: Simple Then & Else
 
 Get a string object based on a single condition.
 
 ```go
-result := Condigo.When(true).
+result := condigo.When(true).
     Then("Success").
     Else("Failure")
 fmt.Println(result) // Output: Success
@@ -19,7 +19,7 @@ fmt.Println(result) // Output: Success
 Handle multiple conditions with `Then`, `ElseIf`, and `Else`.
 
 ```go
-result := Condigo.When(false).
+result := condigo.When(false).
     Then("First").
     ElseIf(true, "Second").
     Else("Default")
@@ -31,7 +31,7 @@ fmt.Println(result) // Output: Second
 Execute functions based on conditions and retrieve their return values.
 
 ```go
-resultFunc, _ := Condigo.When(true).
+resultFunc, _ := condigo.When(true).
     Then(func() bool {
         fmt.Println("Inside Then")
         return true
