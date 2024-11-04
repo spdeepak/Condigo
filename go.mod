@@ -1,1 +1,1 @@
-module condigo
+module github.com/spdeepak/Condigo
